@@ -25,9 +25,10 @@ let cardDiv;
 let titleHeader;
 let authorInfo;
 let pagesInfo;
-function createCardDiv(){
+function createCardDiv(book){
     cardDiv = document.createElement('div');
     cardDiv.className = 'card';
+    cardDiv.setAttribute('libraryIndex',myLibrary.indexOf(book));//this sets data attribut so can remove later
     cardContainer.appendChild(cardDiv);
 }
 function createTitleHeader(title){
@@ -38,19 +39,19 @@ function createTitleHeader(title){
 }
 function createAuthorPara(author){
     authorInfo = document.createElement('p');
-    authorInfo.innerHTML = author;
+    authorInfo.innerHTML = `Author: ${author}`;
     authorInfo.className = 'author';
     cardDiv.appendChild(authorInfo);
 }
 function createPagesPara(pages){
     pagesInfo = document.createElement('p');
-    pagesInfo.innerHTML = pages;
+    pagesInfo.innerHTML = `Length: ${pages} pages`;
     pagesInfo.className = 'pages';
     cardDiv.appendChild(pagesInfo);
 }
 //function to loop through array and display
 myLibrary.forEach((book)=>{
-    createCardDiv();
+    createCardDiv(book);
     createTitleHeader(book.title);
     createAuthorPara(book.author);
     createPagesPara(book.pages);
@@ -58,35 +59,17 @@ myLibrary.forEach((book)=>{
 
 });
 
-/*const para = document.querySelector('#test');
-const aCBtn = document.querySelector('#aC');
-const mCBtn = document.querySelector('#mC');
-
-
-function pickMC(){
-    console.log('clicked');
-    para.textContent = mereChristianity.info();
+//showing and hiding new book form
+const newBookBtn = document.querySelector('#newBookBtn');
+const closeBtn = document.querySelector('.close');
+function showForm(){
+    document.querySelector('.modal').style.display = 'flex';
 }
-function pickAC(){
-    console.log('clicked');
-    para.textContent = abbasChild.info();
+function closeForm(){
+    document.querySelector('.modal').style.display ='none';
 }
+newBookBtn.addEventListener('click',showForm);
+closeBtn.addEventListener('click',closeForm);
 
-const yesRead = 'I have read this book.';
-const noRead = 'I have not read this book.'
-
-function book(title,author,pages,read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function(){
-        return `${this.title} is written by ${this.author}. It is ${this.pages} pages long. ${this.read}`;
-    }
-}
-
-const mereChristianity = new book('Mere Christianity','C.S Lewis','215',yesRead);
-const abbasChild = new book(`Abba's Child`,'Brennan Manning','175',yesRead);
-
-aCBtn.addEventListener('click',pickAC);
-mCBtn.addEventListener('click',pickMC);*/
+//link below is helpful to store array to localstorage using form
+//https://www.youtube.com/watch?v=NxVCq4p0Kb0

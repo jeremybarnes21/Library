@@ -1,17 +1,24 @@
 <html>
     <head>
         <script src="app.js" defer></script>
+        <link rel='stylesheet' href="style.css">
     </head>
     <body>
+        <button class="button"id='newBookBtn'>Add a New Book</button>
         <div id="cardContainer">
-         <div class="card">
-            <!--May not add this because would add image every time img src="img_avatar.png" alt="Book Cover" style="width:100%"-->
-            <div class="infoContainer">
-              <h4 class="bookTitle"><b>Book Title Here</b></h4>
-              <p class="author">Author Here</p>
-              <p class="pages">Page Length Here</p>
-            </div>
-          </div>
+         
         </div>
+        <div class="modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <form action="">
+                    <input type="text" placeholder="Title">
+                    <input type="text" placeholder="Author">
+                    <input type="text" placeholder="Pages">
+                    <a href=""class='button'>Submit</a>
+                </form>
+            </div>
+        </div>
+
     </body>
 </html>
