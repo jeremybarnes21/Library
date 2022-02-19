@@ -4,18 +4,21 @@
         <link rel='stylesheet' href="style.css">
     </head>
     <body>
-        <button class="button"id='newBookBtn'>Add a New Book</button>
+        <div id="btnDiv">
+          <button class="button"id='newBookBtn'>Add a New Book</button>
+        </div>
         <div id="cardContainer">
          
         </div>
         <div class="modal">
             <div class="modal-content">
                 <div class="close">+</div>
+                <h3>Add a New Book to your Library</h3>
                 <form action="">
                     <input type="text" placeholder="Title">
                     <input type="text" placeholder="Author">
                     <input type="text" placeholder="Pages">
-                    <a href=""class='button'>Submit</a>
+                    <a href=""class='button' id="submitBtn">Submit</a>
                 </form>
             </div>
         </div>
