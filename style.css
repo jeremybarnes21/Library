@@ -18,7 +18,7 @@ html{
     transition: 0.3s;
     border-radius: 5px;
     margin: 5px;
-    flex-grow: 1;
+    width: 30%;
     text-align: center;
   }
   
@@ -93,4 +93,28 @@ html{
         color: #1686d9;
         border: 2px solid #1686d9;
       }
+  .delBtn {
+        background-color: #1686d9;
+        border: 2px solid aliceblue;
+        border-radius: 30px;
+        text-decoration: none;
+        padding: 10px 28px;
+        color: aliceblue;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+      .delBtn:hover {
+          background-color: aliceblue;
+          color: #1686d9;
+          border: 2px solid #1686d9;
+        }
+  #submitBtn{
+    margin-bottom: 0px;
+  }
+  #addToLibraryBtn{
+    margin-top: -5px;
+    width: 50%;
+    
+  }
   

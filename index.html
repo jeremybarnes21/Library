@@ -14,12 +14,13 @@
             <div class="modal-content">
                 <div class="close">+</div>
                 <h3>Add a New Book to your Library</h3>
-                <form action="">
-                    <input type="text" placeholder="Title">
-                    <input type="text" placeholder="Author">
-                    <input type="text" placeholder="Pages">
-                    <a href=""class='button' id="submitBtn">Submit</a>
+                <form action="/formHandler" method="post">
+                    <input type="text" name='title' id='title' placeholder="Title">
+                    <input type="text" name='author' id='author' placeholder="Author">
+                    <input type="text" name='pages' id='pages' placeholder="Pages">
+                    <input type='submit' class='button' id="submitBtn">
                 </form>
+                
             </div>
         </div>
 
