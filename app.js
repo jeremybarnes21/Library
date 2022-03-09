@@ -5,9 +5,6 @@ function Book(title, author, pages){
     this.author = author;
     this.pages = pages;
     this.libraryIndex = myLibraryLength;
-    this.delFunc = function(){
-        cardContainer.removeChild(this.cardDiv);
-    }
 }
 
 function addBookToLibrary(book){
@@ -57,8 +54,8 @@ function createPagesPara(pages){
     cardDiv.appendChild(pagesInfo);
 }
 function addDeleteButtonToCard(){
-    DelBtn = document.createElement('button');
-    DelBtn.innerHTML = 'Delete Book';
+    DelBtn = document.createElement('div');
+    DelBtn.innerHTML = '+';
     DelBtn.className = 'delBtn';
     cardDiv.appendChild(DelBtn);
     console.log(DelBtn.parentNode);
@@ -117,7 +114,7 @@ formElem.addEventListener('submit', (e) => {
     addNewBookToLibraryAndDisplay();
     allDelBtns = document.querySelectorAll('.delBtn'); //to make new array of del buttons
     console.log(allDelBtns);
-    addDelBtnClick();//not working 3.8.22
+    addDelBtnClick();
 
     localStorage.setItem('myLibrary',JSON.stringify(myLibrary));
     //^seems to save to localstorage... but not myLibrary...Need to fix so saves when reloads
@@ -134,33 +131,3 @@ function closeForm(){
 }
 newBookBtn.addEventListener('click',showForm);
 closeBtn.addEventListener('click',closeForm);
-
-//working on deleting book..psuedo-code
-
-//need to retrieve index of that book...use prototype?
-//^That is what libraryindex data-attribute is for!!!
-//use findIndex... need function to test book.title...how to
-//book.title = 
-//remove the index from myLibrary array
-//redisplay Library with new myLibrary Array
-
-/*this is not working... 2.25.22
-Book.prototype.returnArrayIndex = function(){
-    console.log(this.title);
-}
-/*function returnArrayIndex(){
-    console.log(this.title);
-}
-DelBtn.addEventListener('click',newBook.returnArrayIndex);*/
-
-//need to change NewBook and prototype?... want to test using objects made
-
-/*console.log(knowingGod.title);
-const kgCard = document.querySelector('[libraryindex="0"]');
-const selDelBtns = document.getElementsByClassName('delBtn');
-function removeCard(){
-    cardContainer.removeChild(cardDiv);
-}
-selDelBtns[0].addEventListener('click',removeCard);// this works for one card*/
-
-//how can link delete button within card to actual card... 
